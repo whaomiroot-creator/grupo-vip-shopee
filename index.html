@@ -23,300 +23,331 @@
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(120,119,198,0.25) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(236,72,153,0.25) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, rgba(56,189,248,0.18) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 80%, rgba(120,119,198,0.18) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(236,72,153,0.18) 0%, transparent 50%);
             z-index: -1;
-            animation: float 20s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.05) rotate(180deg); }
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 
         /* HERO */
         .hero { 
-            background: rgba(15, 23, 42, 0.98); 
-            backdrop-filter: blur(20px);
+            background: #0b1220; 
             color: white; 
             text-align: center; 
-            padding: 100px 0 80px; 
-            position: relative; 
-            border-radius: 0 0 40px 40px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-            margin-bottom: 20px;
+            padding: 80px 0 60px; 
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            margin-bottom: 24px;
         }
         .hero h1 { 
-            font-size: clamp(2rem, 6vw, 3.2rem); 
+            font-size: clamp(2rem, 6vw, 3.1rem); 
             font-weight: 800;
             background: linear-gradient(135deg, #10b981, #06b6d4, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         .hero .price { 
-            font-size: clamp(2.5rem, 9vw, 4.5rem); 
+            font-size: clamp(2.4rem, 8vw, 4.2rem); 
             background: linear-gradient(135deg, #f59e0b, #ef4444);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
-            margin: 16px 0 24px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin: 10px 0 8px;
         }
         .hero p {
-            font-size: clamp(1rem, 4vw, 1.2em); 
-            color: #f8fafc !important;
-            opacity: 1 !important;
+            font-size: clamp(0.95rem, 4vw, 1.1rem); 
+            color: #f8fafc;
             line-height: 1.5;
-            margin-bottom: 24px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            margin-bottom: 18px;
         }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 16px 0 10px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(15,118,110,0.18);
+            border: 1px solid rgba(45,212,191,0.4);
+            font-size: 0.8rem;
+            color: #e5f9f5;
+            white-space: nowrap;
+        }
+        .hero-badge i { font-size: 0.85rem; }
+
         .cta-btn { 
             display: inline-flex; 
             align-items: center; 
             gap: 10px;
             background: linear-gradient(135deg, #10b981, #059669);
             color: white !important; 
-            padding: 18px 32px; 
-            font-size: clamp(1rem, 4vw, 1.2rem); 
+            padding: 16px 28px; 
+            font-size: clamp(1rem, 4vw, 1.15rem); 
             font-weight: 600;
-            border-radius: 16px; 
+            border-radius: 14px; 
             text-decoration: none; 
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 15px 35px rgba(16,185,129,0.4);
-            border: 1px solid rgba(255,255,255,0.3);
-            position: relative;
-            overflow: hidden;
-            margin: 8px;
-            text-shadow: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 14px 30px rgba(16,185,129,0.35);
+            border: 1px solid rgba(34,197,94,0.4);
+            margin: 6px;
         }
-        .cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s;
-        }
-        .cta-btn:hover::before { left: 100%; }
         .cta-btn:hover { 
-            transform: translateY(-4px) scale(1.02); 
-            box-shadow: 0 25px 50px rgba(16,185,129,0.6);
-            color: white !important;
+            transform: translateY(-2px); 
+            box-shadow: 0 18px 38px rgba(16,185,129,0.6);
         }
         .cta-whatsapp { 
             background: linear-gradient(135deg, #22c55e, #16a34a) !important; 
-            box-shadow: 0 15px 35px rgba(34,197,94,0.4) !important;
+            box-shadow: 0 14px 30px rgba(34,197,94,0.4) !important;
         }
 
-        /* BENEFÍCIOS – FUNDO ESCURO */
+        /* BENEFÍCIOS */
         .benefits { 
-            padding: 60px 0; 
-            background: linear-gradient(135deg, #020617 0%, #020617 40%, #0f172a 100%);
-            backdrop-filter: blur(10px);
+            padding: 48px 0; 
+            background: radial-gradient(circle at top, #020617 0%, #020617 40%, #020617 100%);
         }
         .benefits h2 { 
             text-align: center; 
-            font-size: clamp(1.8rem, 5vw, 2.5rem); 
+            font-size: clamp(1.8rem, 5vw, 2.4rem); 
             font-weight: 700;
             background: linear-gradient(135deg, #10b981, #06b6d4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 60px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
         }
         .grid { 
             display: grid; 
             grid-template-columns: 1fr; 
-            gap: 24px; 
+            gap: 18px; 
         }
         .benefit-item { 
-            background: rgba(15,23,42,0.95) !important; 
-            backdrop-filter: blur(12px);
-            border-radius: 20px; 
-            padding: 40px 24px; 
+            background: #020617; 
+            border-radius: 16px; 
+            padding: 26px 18px; 
             text-align: center;
-            border: 1px solid rgba(148,163,184,0.6);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.6);
-            position: relative;
-            overflow: hidden;
-        }
-        .benefit-item * {
-            color: #e5f2ff !important;
+            border: 1px solid rgba(148,163,184,0.5);
         }
         .benefit-item h3 { 
-            font-size: 1.4rem; 
+            font-size: 1.25rem; 
             font-weight: 700;
-            margin-bottom: 16px;
-            color: #f9fafb !important;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            margin-bottom: 10px;
+            color: #f9fafb;
         }
         .benefit-item p {
-            color: #cbd5f5 !important;
-            font-size: 1rem;
-            line-height: 1.6;
+            color: #cbd5f5;
+            font-size: 0.95rem;
         }
         .benefit-item i { 
-            font-size: 3.5rem; 
-            background: linear-gradient(135deg, #10b981, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            font-size: 2.4rem; 
+            margin-bottom: 10px;
+            color: #22c55e;
         }
 
         /* CHECKOUT */
         .checkout-hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
+            padding: 48px 16px 64px;
+            background: #020617;
+        }
+        .checkout-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            background: rgba(15,23,42,0.98);
-            border-radius: 30px;
-            margin: 40px 10px;
-            padding: 40px 20px;
-            overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-            text-align: center;
         }
         .checkout-text h2 {
-            font-size: clamp(2rem, 7vw, 3rem);
+            font-size: clamp(2rem, 6vw, 2.8rem);
             font-weight: 800;
             background: linear-gradient(135deg, #f59e0b, #ef4444);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 24px;
-            line-height: 1.1;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 12px;
         }
         .checkout-text .price-display {
-            font-size: clamp(3rem, 10vw, 5rem);
+            font-size: clamp(2.7rem, 8vw, 3.6rem);
             font-weight: 900;
             background: linear-gradient(135deg, #10b981, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
         }
         .checkout-text p {
-            font-size: clamp(1.1rem, 4vw, 1.3rem); 
-            color: #f8fafc !important;
-            margin-bottom: 0;
+            font-size: 1rem; 
+            color: #e5e7eb;
+            margin-bottom: 14px;
         }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.6);
+            background: rgba(15,23,42,0.9);
+            font-size: 0.8rem;
+            color: #e5e7eb;
+            white-space: nowrap;
+        }
+        .trust-badge i { font-size: 0.85rem; }
+
         .checkout-card {
-            background: rgba(255,255,255,0.18) !important;
-            backdrop-filter: blur(30px);
-            border-radius: 24px;
-            padding: 40px 24px;
-            border: 1px solid rgba(255,255,255,0.4);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            background: #020617;
+            border-radius: 18px;
+            padding: 24px 18px;
+            border: 1px solid rgba(148,163,184,0.6);
+            max-width: 380px;
             width: 100%;
-            max-width: 400px;
             margin: 0 auto;
         }
         .checkout-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: #f8fafc !important;
-            margin-bottom: 20px;
+            color: #f8fafc;
+            margin-bottom: 10px;
             text-align: center;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
         .kiwify-btn {
             width: 100%;
             background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: white !important;
-            padding: 24px 20px;
-            font-size: 1.3rem;
+            padding: 18px 16px;
+            font-size: 1.1rem;
             font-weight: 700;
-            border-radius: 16px;
+            border-radius: 14px;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            transition: all 0.4s;
-            box-shadow: 0 20px 40px rgba(59,130,246,0.5);
-            border: 2px solid rgba(255,255,255,0.3);
-            margin-bottom: 24px;
-            text-shadow: none;
+            gap: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 18px 36px rgba(37,99,235,0.5);
+            border: 1px solid rgba(191,219,254,0.6);
+            margin: 4px 0 12px;
         }
         .kiwify-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 30px 60px rgba(59,130,246,0.7);
-            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 22px 44px rgba(37,99,235,0.7);
         }
         .auto-access {
-            padding: 24px;
-            background: rgba(16,185,129,0.25);
-            border-radius: 16px;
-            border: 2px solid rgba(16,185,129,0.5);
+            padding: 14px 10px;
+            background: rgba(16,185,129,0.18);
+            border-radius: 12px;
+            border: 1px solid rgba(34,197,94,0.6);
             text-align: center;
-        }
-        .auto-access h4 {
-            color: #ecfdf5 !important;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        }
-        .auto-access p {
-            color: #f0fdf4 !important;
-            font-size: 1rem;
-            margin-bottom: 0;
-            line-height: 1.6;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-size: 0.9rem;
+            color: #dcfce7;
         }
 
         footer { 
-            background: rgba(15,23,42,0.98); 
-            color: #e2e8f0 !important; 
+            background: #020617; 
+            color: #e2e8f0; 
             text-align: center; 
-            padding: 40px 20px; 
-            margin-top: 40px;
+            padding: 26px 16px; 
         }
 
         .whatsapp-float { 
             position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
+            bottom: 18px; 
+            right: 18px; 
             background: linear-gradient(135deg, #22c55e, #16a34a); 
             color: white; 
-            width: 64px; 
-            height: 64px; 
+            width: 56px; 
+            height: 56px; 
             border-radius: 50%; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            font-size: 1.8rem; 
-            box-shadow: 0 15px 40px rgba(34,197,94,0.6); 
-            transition: all 0.4s; 
+            font-size: 1.6rem; 
+            box-shadow: 0 16px 32px rgba(22,163,74,0.6); 
+            transition: transform 0.2s ease, box-shadow 0.2s ease; 
             z-index: 1000; 
-            border: 3px solid rgba(255,255,255,0.4);
+            border: 2px solid rgba(255,255,255,0.4);
             text-decoration: none;
         }
         .whatsapp-float:hover { 
-            transform: scale(1.15) translateY(-6px); 
-            box-shadow: 0 25px 50px rgba(34,197,94,0.8);
+            transform: scale(1.1) translateY(-3px); 
+            box-shadow: 0 22px 42px rgba(22,163,74,0.8);
         }
 
-        @media (min-width: 769px) { 
-            .grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
-            .checkout-hero { 
-                flex-direction: row;
-                margin: 60px 20px;
-                padding: 60px 40px;
-                min-height: 80vh;
-                text-align: left;
+        /* CARD DE COMPRAS RECENTES (MENOR) */
+        .sales-card {
+            position: fixed;
+            left: 16px;
+            bottom: 90px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15,23,42,0.96);
+            border-radius: 999px;
+            padding: 8px 12px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.6);
+            border: 1px solid rgba(148,163,184,0.7);
+            color: #e5e7eb;
+            font-size: 0.8rem;
+            z-index: 900;
+            transform: translateX(-130%);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        .sales-card.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .sales-avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f172a;
+            font-size: 0.9rem;
+        }
+        .sales-info {
+            max-width: 210px;
+        }
+        .sales-text strong {
+            color: #facc15;
+        }
+        .sales-time {
+            margin-top: 1px;
+            font-size: 0.7rem;
+            color: #9ca3af;
+        }
+        @media (max-width: 480px) {
+            .sales-card {
+                left: 10px;
+                right: 10px;
+                bottom: 82px;
+                justify-content: flex-start;
             }
-            .checkout-text { margin-right: 40px; }
-            .hero { padding: 140px 0; border-radius: 0 0 60px 60px; }
-            .benefits { padding: 100px 0; }
+        }
+
+        @media (min-width: 768px) { 
+            .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .checkout-inner {
+                grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+                gap: 36px;
+            }
+            .hero { padding: 96px 0 72px; border-radius: 0 0 40px 40px; }
+            .benefits { padding: 60px 0; }
         }
     </style>
 </head>
@@ -326,6 +357,17 @@
             <h1>🚀 Grupo VIP Shopee TURBO</h1>
             <p class="price">APENAS R$19,90</p>
             <p>+2000 VÍDEOS SHOPEE c/ LINKS • 300 STORIES IG • 500 FIGURINHAS</p>
+
+            <div class="hero-badges">
+                <div class="hero-badge"><i class="fas fa-bolt"></i> Acesso instantâneo</div>
+                <div class="hero-badge"><i class="fas fa-download"></i> Download ilimitado</div>
+                <div class="hero-badge"><i class="fas fa-headset"></i> Suporte 24/7</div>
+            </div>
+            <div class="hero-badges">
+                <div class="hero-badge"><i class="fas fa-users"></i> 3.784+ clientes satisfeitos</div>
+                <div class="hero-badge"><i class="fas fa-star"></i> Avaliação média 4,9⭐</div>
+            </div>
+
             <p>
                 💡 Comece a destravar suas vendas e conquiste mais visualizações nos seus vídeos.<br>
                 ❌ Pare de perder tempo editando — é só baixar e postar.<br>
@@ -333,9 +375,9 @@
                 🎯 Figurinhas que vendem no TikTok, Instagram e Shopee Vídeos.<br>
                 ♻️ Atualizações ilimitadas a um preço de banana 😍
             </p>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; max-width: 350px; margin: 0 auto;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; max-width: 360px; margin: 6px auto 0;">
                 <a href="#checkout" class="cta-btn"><i class="fas fa-bolt"></i> COMPRAR AGORA</a>
-                <a href="https://wa.me/5531991555151?text=Oi%20quero%20o%20Grupo%20VIP%20Shopee%20TURBO%20por%20R$19,90!" class="cta-btn cta-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+                <a href="https://wa.me/5531991555151?text=Oi%20quero%20o%20Grupo%20VIP%20Shopee%20TURBO%20por%20R$19,90!" class="cta-btn cta-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> FALAR NO WHATS</a>
             </div>
         </div>
     </section>
@@ -360,7 +402,7 @@
                     <p>Virais comprovadas<br>PNG + PSD editáveis<br>Todas bombaram vendas reais</p>
                 </div>
             </div>
-            <div style="text-align:center; margin-top:40px; font-size:clamp(1.1rem, 3vw, 1.25em); color:#f0f9ff !important;">
+            <div style="text-align:center; margin-top:30px; font-size:clamp(1.05rem, 3vw, 1.2rem); color:#f0f9ff;">
                 🧠 <strong style="color:#facc15;">MEGA BÔNUS: Acesso ChatGPT PRO por 1 ano</strong><br>
                 <span style="opacity:0.9;">Use inteligência artificial para criar anúncios, scripts de vídeos e descrições que vendem muito mais.</span>
             </div>
@@ -368,25 +410,36 @@
     </section>
     
     <section id="checkout" class="checkout-hero">
-        <div class="checkout-text">
-            <h2>💎 Acesso Imediato por R$19,90</h2>
-            <div class="price-display">R$ 19,90</div>
-            <p>PIX instantâneo ou cartão → Link VIP em segundos</p>
-        </div>
-        <div class="checkout-card">
-            <h3><i class="fas fa-credit-card" style="color: #10b981;"></i> Checkout Seguro Kiwify</h3>
-            <p style="font-size:0.95rem; color:#fefce8; margin-bottom:16px; text-align:center;">
-                🧠 <strong style="color:#facc15;">BÔNUS: ChatGPT PRO liberado por 1 ano</strong> junto com seu acesso ao grupo!
-            </p>
-            <a href="https://pay.kiwify.com.br/iX72uP9" class="kiwify-btn" target="_blank">
-                <i class="fas fa-lock"></i> PAGAR R$19,90 PIX/CARTÃO
-            </a>
-            <div class="auto-access">
-                <h4><i class="fas fa-magic"></i> ACESSO AUTOMÁTICO</h4>
-                <p><strong>✅ 1) Pague pelo botão acima</strong><br>
-                <strong>✅ 2) Vá em "Área de Membros" na Kiwify</strong><br>
-                <strong>✅ 3) Clique no link do Telegram VIP</strong><br>
-                <em>Pronto! Acesso liberado em SEGUNDOS! 🚀</em></p>
+        <div class="checkout-inner">
+            <div class="checkout-text">
+                <h2>💎 Acesso Imediato por R$19,90</h2>
+                <div class="price-display">R$ 19,90</div>
+                <p>PIX instantâneo ou cartão – liberação automática na área de membros Kiwify.</p>
+
+                <div class="trust-badges">
+                    <div class="trust-badge"><i class="fas fa-bolt"></i> Acesso instantâneo</div>
+                    <div class="trust-badge"><i class="fas fa-download"></i> Download ilimitado</div>
+                    <div class="trust-badge"><i class="fas fa-headset"></i> Suporte 24/7</div>
+                    <div class="trust-badge"><i class="fas fa-users"></i> 3.784+ clientes</div>
+                    <div class="trust-badge"><i class="fas fa-star"></i> Nota média 4,9⭐</div>
+                </div>
+            </div>
+
+            <div class="checkout-card">
+                <h3><i class="fas fa-credit-card" style="color: #10b981;"></i> Checkout Seguro Kiwify</h3>
+                <p style="font-size:0.9rem; color:#fefce8; margin-bottom:10px; text-align:center;">
+                    🧠 <strong style="color:#facc15;">BÔNUS: ChatGPT PRO liberado por 1 ano</strong> junto com seu acesso ao grupo!
+                </p>
+                <a href="https://pay.kiwify.com.br/iX72uP9" class="kiwify-btn" target="_blank">
+                    <i class="fas fa-lock"></i> PAGAR R$19,90 PIX/CARTÃO
+                </a>
+                <div class="auto-access">
+                    <strong>Como funciona:</strong><br>
+                    1) Você paga pelo botão acima.<br>
+                    2) Vai em “Área de Membros” na Kiwify.<br>
+                    3) Clica no link do Grupo VIP Telegram.<br>
+                    Pronto, acesso liberado em segundos! 🚀
+                </div>
             </div>
         </div>
     </section>
@@ -396,10 +449,66 @@
             <p>&copy; 2025 Grupo VIP Shopee Turbo. Acesso ilimitado + atualizações constantes.</p>
         </div>
     </footer>
+
+    <!-- Card de compras recentes -->
+    <div id="sales-card" class="sales-card">
+        <div class="sales-avatar">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="sales-info">
+            <p class="sales-text">
+                <span id="buyer-line"><strong>João de SP</strong> acabou de comprar o Pack Shopee Turbo 🔥</span>
+            </p>
+            <p class="sales-time"><span id="minutes-ago">3</span> minutos atrás</p>
+        </div>
+    </div>
     
     <a href="https://wa.me/5531991555151?text=%F0%9F%93%8A%20Oi!%20Quero%20o%20Grupo%20VIP%20Shopee%20TURBO%20por%20R$19,90!" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- SCRIPT NO FINAL DO BODY -->
+    <script>
+      const buyerLines = [
+        "João de SP acabou de comprar o Pack Shopee Turbo 🔥",
+        "Mariana de BH garantiu o acesso ao Pack Shopee Turbo 🚀",
+        "Carlos de RJ entrou para o Grupo VIP Shopee Turbo 💸",
+        "Ana de Recife acabou de destravar o Pack de Vídeos 😱",
+        "Pedro de Fortaleza comprou o Pack Shopee Turbo agora mesmo 🔥",
+        "Luiza de Salvador entrou para o Grupo VIP Shopee Turbo 🚀",
+        "Rafa de Curitiba garantiu acesso completo ao Pack Shopee Turbo 💸",
+        "Bruna de Manaus acabou de comprar o Pack Shopee Turbo 😱",
+        "Felipe de Brasília garantiu o Pack + ChatGPT PRO 🧠",
+        "Camila de Goiânia entrou para o Grupo VIP Shopee Turbo 💥",
+        "Sandra de Belém acabou de pegar o Pack Shopee Turbo 🔥",
+        "André de Florianópolis comprou o Pack com Pix agora 💸",
+        "Patrícia de Vitória garantiu acesso vitalício ao Pack 🚀",
+        "Marcelo de Campinas entrou para o Grupo VIP Shopee Turbo 😎",
+        "Isabela de Santos acabou de comprar o Pack Shopee Turbo 🔥"
+      ];
+
+      const card = document.getElementById("sales-card");
+      const buyerLineEl = document.getElementById("buyer-line");
+      const minutesAgoEl = document.getElementById("minutes-ago");
+
+      function showRandomSale() {
+        const randomLine = buyerLines[Math.floor(Math.random() * buyerLines.length)];
+        const randomMinutes = Math.floor(Math.random() * 10) + 1; // 1–10 min
+
+        buyerLineEl.innerHTML = randomLine;
+        minutesAgoEl.textContent = randomMinutes;
+
+        card.classList.add("show");
+
+        setTimeout(() => {
+          card.classList.remove("show");
+        }, 5000);
+      }
+
+      // primeira exibição
+      setTimeout(showRandomSale, 4000);
+      // repete a cada 18s
+      setInterval(showRandomSale, 18000);
+    </script>
 </body>
 </html>
-
